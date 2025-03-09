@@ -1,21 +1,43 @@
-MIT License
+import java.util.Scanner;  // Scanner sınıfını dahil ettik
 
-Copyright (c) 2025 Ebubekir
+public class Main {
+    public static void main(String[] args) {
+        // Değişkenleri oluştur
+        int mat, fizik, kimya, turkce, tarih;
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+        // Scanner sınıfımızı tanımladık
+        Scanner input = new Scanner(System.in);
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+        // Kullanıcıdan değerleri al
+        System.out.print("Matematik notunuzu giriniz: ");
+        mat = input.nextInt();
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+        System.out.print("Fizik notunuzu giriniz: ");
+        fizik = input.nextInt();
+
+        System.out.print("Kimya notunuzu giriniz: ");
+        kimya = input.nextInt();
+
+        System.out.print("Türkçe notunuzu giriniz: ");
+        turkce = input.nextInt();
+
+        System.out.print("Tarih notunuzu giriniz: ");
+        tarih = input.nextInt();
+
+        // Notların ortalamasını hesapla
+        double ortalama = (mat + fizik + kimya + turkce + tarih) / 5.0;
+
+        // Ortalamayı ekrana yazdır
+        System.out.println("Ortalamanız: " + ortalama);
+
+        // Başarı durumunu kontrol et
+        if (ortalama >= 60) {
+            System.out.println("Tebrikler, sınıfı geçtiniz!");
+        } else {
+            System.out.println("Maalesef kaldınız, sınıfta kaldiniz daha fazla çalışmalısınız.");
+        }
+
+        // Scanner nesnesini kapat
+        input.close();
+    }
+}
